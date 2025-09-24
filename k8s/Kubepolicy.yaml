@@ -1,0 +1,15 @@
+apiVersion: security.kubearmor.com/v1
+kind: KubeArmorPolicy
+metadata:
+  name: block-shell-exec
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: wisecow
+  process:
+    matchPaths:
+    - path: /usr/bin/sh
+    - path: /usr/bin/bash
+  action:
+    Audit
