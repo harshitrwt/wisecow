@@ -1,6 +1,6 @@
 ## This file is created to explain everything i did for Problem statement 1 and 3.
 ### For Problem statement 2 checkout : [Link](https://github.com/harshitrwt/assignment_devOps)
-### Problem Statement 1 – Deploy Wisecow with TLS and CI/CD
+### Problem Statement 1 - Deploy Wisecow with TLS and CI/CD
 
 I started by forking the Wisecow repository and cloning my fork locally.
 Inside the repo I created a new branch called k8sdeployment where I kept all of my Kubernetes and CI changes.
@@ -26,11 +26,11 @@ Once the container worked, I tagged and pushed it to my Docker Hub account so th
 With the image available, I moved to Kubernetes.
 Inside a new k8s folder I created three manifests:
 
-deployment.yaml – defined a Deployment running the image harshitrwt009/wisecow:latest and exposing container port 4499.
+deployment.yaml - defined a Deployment running the image harshitrwt009/wisecow:latest and exposing container port 4499.
 
-service.yaml – defined a Service so that the deployment could be reached inside the cluster 
+service.yaml - defined a Service so that the deployment could be reached inside the cluster 
 
-ingress.yaml – defined an Ingress to serve the application under the hostname wisecow.local and referenced a TLS secret.
+ingress.yaml - defined an Ingress to serve the application under the hostname wisecow.local and referenced a TLS secret.
 
 I started a local Kubernetes cluster with
 ```
